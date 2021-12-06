@@ -1,0 +1,36 @@
+<section class="row ms-2 me-3 d-flex justify-content-center">
+    <div class="col-10 card">
+        <div class="card-body">
+            <h5>Cliente Nombre</h5>
+            <p>Agregar / Modificar / Eliminar cliente</p>
+
+            <form [formGroup]="registerForm" class="d-flex justify-content-between">
+                <div class="col-5 align-content-center">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input name="nombre" placeholder="Nombre" type="text" class="form-control mb-4" formControlName="nombre" autocomplete="off">
+    
+                    <label for="CUIT" class="form-label">CUIT</label>
+                    <input name="CUIT" placeholder="CUIT" type="number" class="form-control" formControlName="cuit">
+                </div>
+                <div class="col-5 align-content-center">
+                    <label for="Dirección" class="form-label">Dirección</label>
+                    <input name="Dirección" placeholder="Dirección" type="text" class="form-control" formControlName="direccion">
+                    
+                    <label for="email" class="form-label mt-4">Email</label>
+                    <input name="email" placeholder="Email" type="text" class="form-control mb-4" formControlName="email">
+                </div>
+            </form>
+
+            <div class="row float-end col-7" style="margin-top: 3.125rem;">
+                <div class="d-flex justify-content-between">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-secondary">Anterior</button>
+                        <button type="button" class="btn btn-secondary">Siguiente</button>
+                    </div>
+                    <button class="btn btn-primary" (click)="register()">GUARDAR</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

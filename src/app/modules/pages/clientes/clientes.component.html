@@ -1,0 +1,59 @@
+<section class="row me-2 ms-1">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-11">
+                <input type="text" class="form-control" placeholder="Búsqueda por mail y nombre" aria-label="Búsqueda por mail y nombre" aria-describedby="basic-addon1">
+            </div>
+            <button class="btn btn-success col-1" [routerLink]="STR_ABM_CLIENTE">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 d-flex justify-content-between">
+                <article class="col-5 card">
+                    <div class="card-body">
+                        <h5 class="d-flex justify-content-between">Cliente Nombre 
+                            <div class="dropdown d-inline">
+                                <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v icon-gabinete"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                  <li><a class="dropdown-item" href="">Agregar gabinete</a></li>
+                                  <li><a class="dropdown-item" href="">Modificar cliente</a></li>
+                                  <li><a class="dropdown-item" href="">Gestionar Plantas y Sectores</a></li>
+                                  <li><a class="dropdown-item" href="">Eliminar cliente</a></li>
+                                </ul>
+                            </div>
+                        </h5>
+                        <p class="text-secondary">Cliente mail</p>
+                        <ul class="list-group">
+                            <li class="list-group-item" style="background-color: #E9ECEF;">Prendas</li>
+                            <li class="list-group-item item d-flex justify-content-between"><p>PANTALONES</p> <p>10</p></li>
+                            <li class="list-group-item item d-flex justify-content-between">GUANTES <p>20</p></li>
+                            <li class="list-group-item item d-flex justify-content-between">BOTAS <p>30</p></li>
+                        </ul>
+                        <ul class="list-group mt-4">
+                            <li class="list-group-item p-3 d-flex justify-content-between">Gabinete 1 <p><strong>P1 - S1 
+                                <div class="dropdown d-inline">
+                                    <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v icon-gabinete"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li><a class="dropdown-item" href="">Modificar</a></li>
+                                      <li><a class="dropdown-item" href="">Eliminar</a></li>
+                                    </ul>
+                                  </div>
+                                </strong></p></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="col-5 card">
+                    <div class="card-body">
+                        <h5>Cliente Nombre</h5>
+                        <p class="text-secondary">Cliente mail</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>

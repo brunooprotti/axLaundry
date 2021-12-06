@@ -1,0 +1,13 @@
+:root{
+    --bg-general: #E5E5E5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-general{
+    background-color: var(--bg-general);
+}

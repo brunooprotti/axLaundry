@@ -1,0 +1,62 @@
+<main class="container-fluid bg-general p-0 min-vh-100" >
+    <div class="row d-flex justify-content-end mx-0 pt-3" *ngIf="error.status === true">
+        <div class="col-3 ">
+            <div class="alert alert-danger alert-dismissible fade show " role="alert">
+                {{error.msg}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <section class="row w-100 min-vh-100 d-flex justify-content-center align-items-center" *ngIf="step === 1">
+        <div class="col-5 text-center">
+            <img src="../../../../assets/imagenes/logo.png" alt="Logo" width="300px" class="mb-4">
+            <div class="card card-body" [formGroup]="recuperarForm">
+                <label for="email" class="form-label text-start">Escribí tu mail</label>
+                <input name="email" placeholder="Email" type="text" class="form-control mb-4" formControlName="email">
+                
+                <button class="btn btn-primary my-3" (click)="[recuperar()]">SIGUIENTE</button>
+                <a class="py-5" [routerLink]="STR_AUTH_LOGIN">Volver al Login</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="row w-100 min-vh-100 d-flex justify-content-center align-items-center" *ngIf="step === 2">
+        <div class="col-5 text-center">
+            <img src="../../../../assets/imagenes/logo.png" alt="Logo" width="300px" class="mb-4">
+            <div class="card card-body" [formGroup]="codigoForm">
+                <label for="codigo" class="form-label text-start">Escribí el código de 6 dígitos que enviamos a tu mail</label>
+                <input name="codigo" placeholder="Código" type="text" class="form-control mb-4" formControlName="codigo">
+
+                <button class="btn btn-primary my-3" (click)="comprobarCodigo()">SIGUIENTE</button>
+                <button class="btn btn-secondary mb-4" (click)="reenviarCodigo()">Reenviar código</button>
+                <p>Si no recibiste el código, contactate con nosotros</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="row d-flex justify-content-end mx-0 pt-3" *ngIf="error.status === true">
+        <div class="col-3 ">
+            <div class="alert alert-danger alert-dismissible fade show " role="alert">
+                {{error.msg}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <section class="row w-100 min-vh-100 d-flex justify-content-center align-items-center" *ngIf="step === 3">
+        <div class="col-5 text-center">
+            <img src="../../../../assets/imagenes/logo.png" alt="Logo" width="300px" class="mb-4">
+            <div class="card card-body" [formGroup]="newPasswordForm">
+                <label for="contraseña" class="form-label text-start">Ingresá tu nueva contraseña</label>
+                <input name="contraseña" placeholder="Contraseña" type="password" class="form-control mb-4" formControlName="contraseña">
+
+                <button class="btn btn-primary my-3" (click)="restablecer()">FINALIZAR</button>
+                <button type="button" class="mb-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="<ul> <li>1 item</li> <li>Otro item</li> <li>Tercer item</li> </ul>">
+                    Conocé los requisitos mínimos para las contraseñas
+                </button>
+                
+            </div>
+        </div>
+    </section>
+    <app-footer></app-footer>
+</main>

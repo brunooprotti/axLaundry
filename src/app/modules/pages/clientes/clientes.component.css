@@ -1,0 +1,18 @@
+.item:hover{
+    cursor: pointer;
+    z-index: 2;
+    color: #000;
+    background-color: #f8f8f8;
+    border-color: #dddbdb;
+}
+
+li > p {
+    margin:0;
+    padding: 0%;
+}
+
+.icon-gabinete{
+    margin-left: 10px;
+    font-size: 20px;
+    width: auto;
+}
