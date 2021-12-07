@@ -1,30 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { INTERNAL_PATHS, INTERNAL_ROUTES } from '../../../data/routes/internal.routes';
+import { INTERNAL_ROUTES } from '../../../data/routes/internal.routes';
+import { AuthService, ObjLogin } from '../../../data/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   public STR_AUTH_RECUPERAR = INTERNAL_ROUTES.AUTH_PASSWORD
 
-  loginForm: FormGroup = this.fb.group({
-    email:["",[Validators.required,Validators.email]],
-    contraseña:["",[Validators.required]]
-  })
+  loginForm!: FormGroup;
 
-  constructor( private fb:FormBuilder,
-               private router:Router ) { }
+  constructor( private authService:AuthService,
+               private fb:FormBuilder,
+               private router:Router ) { 
 
-  ngOnInit(): void {
+                 this.loginForm = this.fb.group({
+                   userName:["",[Validators.required,Validators.email]],
+                   password:["",[Validators.required]]
+                 })
+
   }
 
+
   login(){
-    console.log(this.loginForm.value);
-    this.router.navigateByUrl(INTERNAL_ROUTES.HOME)
+    const objLogin:ObjLogin = this.loginForm.value
+
+    if( objLogin.userName && objLogin.password ){ //Si existen entonces hago el post.
+      console.log(objLogin);
+      this.authService.login(objLogin)
+        .subscribe(
+          () => {
+            this.router.navigateByUrl(INTERNAL_ROUTES.HOME)
+          }
+        )
+    }
   }
 }

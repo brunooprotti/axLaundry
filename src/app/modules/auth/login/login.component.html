@@ -4,10 +4,10 @@
             <img src="../../../../assets/imagenes/logo.png" alt="Logo" width="300px" class="mb-4">
             <div class="card card-body" [formGroup]="loginForm">
                 <label for="email" class="form-label text-start">Email</label>
-                <input name="email" placeholder="Email" type="text" class="form-control mb-4" formControlName="email">
+                <input name="email" placeholder="Email" type="text" class="form-control mb-4" formControlName="userName">
 
                 <label for="Contraseña" class="form-label text-start">Contraseña</label>
-                <input name="Contraseña" placeholder="Contraseña" type="password" class="form-control" formControlName="contraseña">
+                <input name="Contraseña" placeholder="Contraseña" type="password" class="form-control" formControlName="password">
 
                 <button class="btn btn-primary my-3" (click)="login()">INGRESAR</button>
                 <button class="btn btn-secondary mb-4" [routerLink]="STR_AUTH_RECUPERAR">Olvidé mi contraseña</button>
