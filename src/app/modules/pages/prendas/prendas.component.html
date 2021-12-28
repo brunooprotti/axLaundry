@@ -1,1 +1,76 @@
-<p>prendas works!</p>
+<section class="row me-2 ms-1">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-11">
+                <input type="text" class="form-control" placeholder="Búsqueda por nombre" aria-label="Búsqueda por nombre" aria-describedby="basic-addon1">
+            </div>
+            <button class="btn btn-success col-1" [routerLink]="STR_AGREGAR_TIPO_PRENDA">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+        <div class="row mt-5 me-0 ms-1">
+            <div class="col-12 d-flex justify-content-center card">
+                    <div class="card-body">
+                        <h5 class="d-flex justify-content-between">Tipo de prendas</h5>
+                        <p class="text-secondary">Seleccioná un tipo de prenda para visualizarlo o eliminarlo, o registrá una nueva</p>
+
+                        <ul class="list-group mt-4">
+                            <li class="list-group-item p-3 d-flex justify-content-between">GUANTES <p><strong>
+                                <div class="dropdown d-inline">
+                                    <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v icon-gabinete"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="">Editar</a></li>
+                                        <li><!-- Button trigger modal -->
+                                            <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                Eliminar
+                                            </a>
+                                        </li>
+                                    </ul>
+                                  </div>
+                                </strong>
+                                </p>
+                            </li>
+                            <li class="list-group-item p-3 d-flex justify-content-between">BOTAS<p><strong>
+                                <div class="dropdown d-inline">
+                                    <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v icon-gabinete"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="">Editar</a></li>
+                                        <li><!-- Button trigger modal -->
+                                            <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                Eliminar
+                                            </a>
+                                        </li>
+                                    </ul>
+                                  </div>
+                                </strong>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Estas a punto de eliminar un tipo de prenda</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Seguro que deseas hacerlo?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

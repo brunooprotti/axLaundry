@@ -4,12 +4,15 @@ import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ClientesComponent } from './clientes/clientes.component';
 import { PrendasComponent } from './prendas/prendas.component';
+import { OrdenesComponent } from './ordenes/ordenes.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     ClientesComponent,
-    PrendasComponent
+    PrendasComponent,
+    OrdenesComponent
   ],
   imports: [
     CommonModule,

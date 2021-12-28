@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
+import { NoAuthGuard } from './core/guards/no-auth.guard';
 import { INTERNAL_PATHS } from './data/routes/internal.routes';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 
 const routes: Routes = [
     {
       path: INTERNAL_PATHS.AUTH_DEFAULT,
+      canActivate:[NoAuthGuard],
       loadChildren: () => import('./modules/auth/auth.module').then((m)=>m.AuthModule)
     },
     {

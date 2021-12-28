@@ -36,7 +36,7 @@ export class LoginComponent {
         .subscribe(
           () => {
             this.router.navigateByUrl(INTERNAL_ROUTES.HOME)
-          }
+          },e => console.log(e)
         )
     }
   }

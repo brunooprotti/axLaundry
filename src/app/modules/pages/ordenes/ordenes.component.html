@@ -1,0 +1,45 @@
+<section class="row me-2 ms-3 card d-flex justify-content-center card">
+    <div class="col-12 card-body">
+        <h5 class="d-flex justify-content-between">Órdenes <i class="fa fa-cloud-download"></i></h5>
+        <p class="text-secondary">Listado de órdenes generadas</p>
+        <table class="table text-center">
+            <thead>
+              <tr class="table-secondary">
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">Número</th>
+                <th scope="col">ORIGEN</th>
+                <th scope="col">DESTINO</th>
+                <th scope="col">FECHA ALTA</th>
+                <th scope="col">FECHA CIERRE</th>
+                <th scope="col">PRENDAS</th>
+                <th scope="col">ES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of ordenLista; let i = index">
+                <!-- <th scope="row">{{i + 1}}</th> -->
+                <td>{{ item.numero }}</td>
+                <td>{{ item.origen }}</td>
+                <td>{{ item.destino }}</td>
+                <td>{{ item.fechaAlta | date:'dd/MM/yyyy'}}</td>
+                <td>{{ item.fechaCierre | date:'dd/MM/yyyy'}}</td>
+                <td>{{ item.prendas }}</td>
+                <td>{{ item.estado }}</td>
+              </tr>
+            </tbody>
+        </table>
+        <nav class="mt-5 col-12 d-flex justify-content-end">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><span class="page-link">2</span></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>

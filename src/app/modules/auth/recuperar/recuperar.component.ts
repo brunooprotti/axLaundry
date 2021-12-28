@@ -18,40 +18,50 @@ export class RecuperarComponent implements OnInit {
     msg: ""
   };
 
+  intentos:number = 0;
+
   recuperarForm:FormGroup = this.fb.group({
     email:["",[Validators.required,Validators.email]],
   })
 
   codigoForm:FormGroup = this.fb.group({
-    codigo:["",[Validators.required,Validators.email]],
+    codigo:["",[Validators.required,Validators.minLength(6),Validators.maxLength(6)]],
   })
 
   newPasswordForm:FormGroup = this.fb.group({
     contraseña:["",[Validators.required,Validators.email]],
   })
   
-  constructor( private fb:FormBuilder,
-               private router:Router ) { 
-    
-
-
-  }
+  constructor(private fb:FormBuilder,
+              private router:Router) {}
 
   ngOnInit(): void {
   }
 
   recuperar(){
     //Post 2 pasa a la sig pagina de recup, si no salta alert
-    this.step = 2;
-    this.error.status = true;
-    this.error.msg = "El mail ingresado no es válido"
+    if(this.recuperarForm.get('email')?.value === "")  {
+      this.error.status = true; 
+      this.error.msg = "El mail ingresado no es válido";
+    }
+    else this.error.status = false;
+
+    if (this.error.status === false) {
+      this.step = 2;
+    }
   }
 
   comprobarCodigo(){
     //Post 3 pasa a la sig pagina de recup, si no salta alert
-    this.step = 3;
-    this.error.status = true;
-    this.error.msg = "El código ingresado no es válido.\nRecordá que tenes 3 intentos"
+    if(this.codigoForm.get('codigo')?.value === "" || this.codigoForm.get('codigo')?.errors) {
+      this.error.status = true;
+      this.error.msg = "El código ingresado no es válido.\nRecordá que tenes 3 intentos";
+      this.intentos += 1;
+    }else this.error.status = false;
+
+    if (this.error.status === false) {
+      this.step = 3;
+    }
   }
 
   reenviarCodigo(){

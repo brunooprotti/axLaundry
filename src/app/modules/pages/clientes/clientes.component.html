@@ -18,10 +18,10 @@
                                     <i class="fa fa-ellipsis-v icon-gabinete"></i>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                  <li><a class="dropdown-item" href="">Agregar gabinete</a></li>
+                                  <li><a class="dropdown-item" [href]="STR_AGREGAR_GABINETE">Agregar gabinete</a></li>
                                   <li><a class="dropdown-item" href="">Modificar cliente</a></li>
                                   <li><a class="dropdown-item" href="">Gestionar Plantas y Sectores</a></li>
-                                  <li><a class="dropdown-item" href="">Eliminar cliente</a></li>
+                                  <li><a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="eliminacion = 'cliente'">Eliminar cliente</a></li>
                                 </ul>
                             </div>
                         </h5>
@@ -39,8 +39,12 @@
                                         <i class="fa fa-ellipsis-v icon-gabinete"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                      <li><a class="dropdown-item" href="">Modificar</a></li>
-                                      <li><a class="dropdown-item" href="">Eliminar</a></li>
+                                        <li><a class="dropdown-item" href="">Modificar</a></li>
+                                        <li><!-- Button trigger modal -->
+                                            <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="eliminacion = 'gabinete'">
+                                                Eliminar
+                                            </a>
+                                        </li>
                                     </ul>
                                   </div>
                                 </strong></p></li>
@@ -57,3 +61,23 @@
         </div>
     </div>
 </section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Estas a punto de eliminar un {{eliminacion}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Seguro que deseas hacerlo?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

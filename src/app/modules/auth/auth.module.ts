@@ -8,6 +8,7 @@ import { AppModule } from '../../app.module';
 import { FooterComponent } from '../../layout/footer/footer.component';
 import { SharedModule } from '../../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AuthRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   exports:[
     AuthRoutingModule
